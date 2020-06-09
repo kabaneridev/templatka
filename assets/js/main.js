@@ -53,3 +53,22 @@ function myTimer() {
   var d = new Date();
   document.getElementById("clock").innerHTML = d.toLocaleTimeString();
 }
+
+/* 
+back to top button
+*/
+
+var btn = $('#top_button');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
